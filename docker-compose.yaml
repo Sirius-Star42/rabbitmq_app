@@ -1,11 +1,12 @@
 version: '3'
 services:
-  rabbit_mq:
+  rabbitmq:
     image: rabbitmq:3.8-management
     container_name: rabbit-container
     hostname: rabbit-host
     ports:
-      - "8080:15672"
+      - "5672:5672"
+      - "15672:15672"
     environment:
       - RABBITMQ_DEFAULT_USER=user
       - RABBITMQ_DEFAULT_PASS=password
